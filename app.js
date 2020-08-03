@@ -61,9 +61,6 @@ function updateCountdown() {
     seconds = seconds < 10 ? '0' + seconds : seconds;
     hours = hours < 10 ? '0' + hours : hours;
     timer.innerText = (`${hours}:${minutes}:${seconds}`);
-    inputs.forEach(input => {
-        input.value = "";
-    });
     ifZero()
     time--;
 };
@@ -81,6 +78,9 @@ function reset() {
 // Time - start
 function start() {
     addValues();
+    inputs.forEach(input => {
+        input.value = "";
+    });
     if (!startBtn.classList.contains('active') && time > 0) {
         countdown = setInterval(updateCountdown, 1000);
         startBtn.classList.toggle('active');
