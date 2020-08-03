@@ -1,3 +1,46 @@
+@media screen and (max-width: 930px) {
+  html {
+    font-size: 55% !important;
+  }
+}
+@media screen and (max-width: 660px) {
+  html {
+    font-size: 54% !important;
+  }
+
+  .navbar {
+    margin: 3rem auto;
+  }
+  .navbar #logo {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+  .navbar .input-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    width: 10rem;
+  }
+
+  .timer {
+    height: 50vh !important;
+  }
+  .timer .clock {
+    font-size: 13rem !important;
+  }
+}
+@media screen and (max-width: 550px) {
+  .timer .clock {
+    font-size: 9rem !important;
+  }
+}
+@media screen and (max-width: 455px) {
+  .timer .clock {
+    font-size: 8rem !important;
+  }
+}
 * {
   padding: 0;
   margin: 0;
