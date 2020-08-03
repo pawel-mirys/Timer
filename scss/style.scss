@@ -1,1 +1,79 @@
 @import "variables";
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-family: 'Roboto Mono', monospace;
+    background: $bodyBg;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -webkit-touch-callout: none;
+}
+
+.navbar {
+    @include flex(center, space-evenly);
+    flex-wrap: wrap;
+    color: $navColor;
+    font-size: 2rem;
+    width: 90%;
+    margin: 3rem auto;
+    h2 {
+        color: $blue;
+    }
+    .input {
+        border: none;
+        background: $inputBg;
+        font-size: 2rem;
+        color: $blue;
+        transition: 0.3s ease;
+        padding-left: .5rem;
+        width: 10rem;
+        &:hover {
+            background: $inputHover;
+        }
+        &:focus {
+            border: 1px solid $blue;
+            background: $inputBg;
+        }
+    }
+    .start {
+        width: 3rem;
+        height: 3rem;
+        pointer-events: none;
+        pointer-events: none;
+        .svg-inline--fa {
+            height: 3.5rem;
+            width: 3.5rem;
+            cursor: pointer;
+            pointer-events: all;
+            transition: 0.3s ease;
+            &:hover {
+                color: $blue;
+            }
+        }
+    }
+}
+
+.timer {
+    @include flex(center, center);
+    width: 100%;
+    height: 70vh;
+    .clock {
+        color: $clockColor;
+        font-size: 15rem;
+        transition: .3s ease;
+    }
+}
+
+.active {
+    color: #9e2a2a;
+}
