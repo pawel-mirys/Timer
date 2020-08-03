@@ -5,7 +5,13 @@ const minuteInput = document.querySelector(".minutes-input");
 const timer = document.querySelector('.clock');
 const startBtn = document.querySelector('.start');
 
-
+// Set "mins" and "hrs" = 0 at the beggining
+function setZero() {
+    mins = 0;
+    hrs = 0;
+    return mins, hrs;
+}
+setZero();
 
 // Inputs event listeners
 hourInput.addEventListener('input', (e) => {
