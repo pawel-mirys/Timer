@@ -7,7 +7,34 @@ const startBtn = document.querySelector('.start');
 
 
 
+// Input event listeners
+hourInput.addEventListener('input', (e) => {
+    val = e.target.value;
+    hrs = val;
+    hrs <= 0 ? hrs = 0 : hrs;
+    hrs = parseInt(hrs);
+    hrs *= 60 * 60;
+    console.log(` hours in seconds = ${hrs}s`);
+    return hrs;
 
+})
+
+minuteInput.addEventListener('input', (e) => {
+    let val = e.target.value;
+    mins = val;
+    mins <= 0 ? mins = 0 : mins;
+    mins = parseInt(mins);
+    mins *= 60;
+    console.log(` minutes in seconds = ${mins}s`);
+    return mins;
+})
+
+
+// Add values from both inputs
+function addValues() {
+    time = hrs + mins;
+    return time;
+}
 
 // If time = 0 - Stop counting
 function ifZero() {
