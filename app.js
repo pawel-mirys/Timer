@@ -7,7 +7,7 @@ const startBtn = document.querySelector('.start');
 
 
 
-// Input event listeners
+// Inputs event listeners
 hourInput.addEventListener('input', (e) => {
     val = e.target.value;
     hrs = val;
@@ -61,3 +61,31 @@ function updateCountdown() {
     ifZero()
     time--;
 };
+
+
+// Reset all
+function reset() {
+    mins = 0;
+    hrs = 0;
+    time = 0;
+    startBtn.classList.remove('active');
+    return mins, hrs;
+}
+
+// Time - start
+function start() {
+    addValues();
+    if (!startBtn.classList.contains('active') && time > 0) {
+        countdown = setInterval(updateCountdown, 1000);
+        startBtn.classList.toggle('active');
+    } else if (startBtn.classList.contains('active') && time >= 0) {
+        reset();
+    } else {
+        ifZero();
+    }
+}
+
+
+
+// Time - trigger
+startBtn.addEventListener('click', start);
