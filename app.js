@@ -72,18 +72,22 @@ function reset() {
     hrs = 0;
     time = 0;
     startBtn.classList.remove('active');
+    inputs.forEach(input => {
+        input.disabled = false;
+    });
     return mins, hrs;
 }
 
 // Time - start
 function start() {
     addValues();
-    inputs.forEach(input => {
-        input.value = "";
-    });
     if (!startBtn.classList.contains('active') && time > 0) {
         countdown = setInterval(updateCountdown, 1000);
         startBtn.classList.toggle('active');
+        inputs.forEach(input => {
+            input.value = "";
+            input.disabled = true;
+        });
     } else if (startBtn.classList.contains('active') && time >= 0) {
         reset();
     } else {
