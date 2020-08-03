@@ -1,0 +1,12 @@
+@mixin flex($align, $justify) {
+    display: flex;
+    align-items: $align;
+    justify-content: $justify;
+}
+
+$blue: #416db4;
+$bodyBg: #272B30;
+$navColor: #acacac;
+$inputBg: #3f3f41;
+$inputHover: #6f6f70;
+$clockColor: #4ea14e;
