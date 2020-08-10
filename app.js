@@ -45,7 +45,12 @@ function addValues() {
 // If time = 0 - Stop counting
 function ifZero() {
     if (time <= 0) {
+        startBtn.classList.remove('active');
+        timer.classList.remove('active');
         clearInterval(countdown);
+        inputs.forEach(input => {
+            input.disabled = false;
+        });
         console.log("done");
     }
 }
@@ -72,9 +77,7 @@ function reset() {
     hrs = 0;
     time = 0;
     startBtn.classList.remove('active');
-    inputs.forEach(input => {
-        input.disabled = false;
-    });
+    timer.classList.remove('active');
     return mins, hrs;
 }
 
@@ -83,7 +86,8 @@ function start() {
     addValues();
     if (!startBtn.classList.contains('active') && time > 0) {
         countdown = setInterval(updateCountdown, 1000);
-        startBtn.classList.toggle('active');
+        startBtn.classList.add('active');
+        timer.classList.add('active');
         inputs.forEach(input => {
             input.value = "";
             input.disabled = true;
